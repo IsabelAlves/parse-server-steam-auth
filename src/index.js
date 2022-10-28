@@ -1,5 +1,3 @@
-/* global Parse */
-
 const httpsRequest = require('./httpsRequest');
 
 function validateAuthData(authData, options) {
