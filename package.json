@@ -1,6 +1,6 @@
 {
   "name": "parse-server-steam-auth",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "steam authentication module for parse server to work with back4App",
   "main": "src/index.js",
   "repository": {
