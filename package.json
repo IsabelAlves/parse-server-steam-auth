@@ -1,0 +1,24 @@
+{
+  "name": "parse-server-steam-auth",
+  "version": "1.0.0",
+  "description": "steam authentication module for parse server to work with back4App",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsabelAlves/parse-server-steam-auth.git"
+  },
+  "keywords": [
+    "parse-server",
+    "gaming",
+    "steam"
+  ],
+  "author": "Isabel Alves",
+  "license": "ISC",
+  "dependencies": {
+    "https": "^1.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/IsabelAlves/parse-server-steam-auth/issues"
+  },
+  "homepage": "https://github.com/IsabelAlves/parse-server-steam-auth"
+}
