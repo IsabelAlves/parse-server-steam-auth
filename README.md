@@ -32,7 +32,7 @@ Configuring parse-server for steam:
 ```
 auth: {
   steam: {
-    module: 'parse-server-steam-auth', // TODO check correct module name/path
+    module: 'parse-server-steam-auth',
     webAPIKey: '',  // your steam web API key or publisher key
     appID: '',  // your steam app ID
     publisherKey: true  // set to true if you are using a publisher key, or false if you are using a public web API key (optional, default false)
