@@ -1,10 +1,10 @@
 const httpsRequest = require('./httpsRequest');
 
 function validateAuthData(authData, options) {
-
+  let GoodParse = global[options.parseLink]
   if (!options) {
-    throw new Parse.Error(
-      Parse.Error.INTERNAL_SERVER_ERROR,
+    throw new GoodParse.Error(
+      GoodParse.Error.INTERNAL_SERVER_ERROR,
       'steam auth configuration missing'
     );
   }
@@ -17,8 +17,8 @@ function validateAuthData(authData, options) {
   ).then(data => {
     if (data.response.error != null)
     {
-      throw new Parse.Error(
-        Parse.Error.OBJECT_NOT_FOUND,
+      throw new GoodParse.Error(
+        GoodParse.Error.OBJECT_NOT_FOUND,
         'Steam returned error ' + data.response.error.errordesc
       );
     }
@@ -29,8 +29,8 @@ function validateAuthData(authData, options) {
     }
     else
     {
-      throw new Parse.Error(
-        Parse.Error.OBJECT_NOT_FOUND,
+      throw new GoodParse.Error(
+        GoodParse.Error.OBJECT_NOT_FOUND,
         'steam auth is invalid for this user.'
       );
     }
