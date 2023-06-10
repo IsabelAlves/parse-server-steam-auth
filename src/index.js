@@ -1,20 +1,21 @@
 const httpsRequest = require('./httpsRequest');
 
 function validateAuthData(authData, options) {
-
   if (!options) {
     throw new Parse.Error(
       Parse.Error.INTERNAL_SERVER_ERROR,
       'steam auth configuration missing'
     );
   }
-
-  return steamApiRequest(options.publisherKey,
-    "ISteamUserAuth/AuthenticateUserTicket/v1/"
+  let request = "ISteamUserAuth/AuthenticateUserTicket/v1/"
     +"?key="+options.webAPIKey
     +"&appid="+options.appID
     +"&ticket="+authData.sessionTicket
-  ).then(data => {
+  if(options.serviceId)
+    request += "&identity="+options.serviceId
+
+  return steamApiRequest(options.publisherKey,request)
+  .then(data => {
     if (data.response.error != null)
     {
       throw new Parse.Error(
